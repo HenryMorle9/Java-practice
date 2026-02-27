@@ -1,4 +1,3 @@
-import java.util.HashMap;
 
 public class Main {
 
@@ -7,8 +6,11 @@ public class Main {
 
 
         int[] numbers = new int[]{22, 10, 234, 822, 10000, 999999};
-
         System.out.println(maxValue(numbers));
+
+        int fizzVal = 100;
+        System.out.println(fizzBuzz(fizzVal));
+
 
     }
 
@@ -45,50 +47,21 @@ public class Main {
 }
 
 
-public static char firstNonRepeating(String s) {
-    //Use HashMap<Character, Integer>
-    //Return '_' if none found
-    //Case sensitive
-    //O(n)
+/*  Given an integer n, return a string array answer (1-indexed) where:
 
-    // If string is null or empty, no character can be non-repeating
-    if (s == null || s.length() == 0) {
-        return '_';
-    }
+answer[i] == "FizzBuzz" if i is divisible by 3 and 5.
+answer[i] == "Fizz" if i is divisible by 3.
+answer[i] == "Buzz" if i is divisible by 5.
+answer[i] == i (as a string) if none of the above conditions are true.
+*/
 
-    // Create a HashMap to store character frequencies
-    HashMap<Character, Integer> frequencyMap = new HashMap<>();
-
-    // First pass: count how many times each character appears
-    for (int i = 0; i < s.length(); i++) {
-
-        // Get current character
-        char c = s.charAt(i);
-
-        // If character already exists in map, increment its count
-        if (frequencyMap.containsKey(c)) {
-            frequencyMap.put(c, frequencyMap.get(c) + 1);
-        } 
-        // Otherwise, add it to map with count 1
-        else {
-            frequencyMap.put(c, 1);
-        }
-    }
-
-    // Second pass: find the first character with frequency 1
-    for (int i = 0; i < s.length(); i++) {
-
-        // Get current character
-        char c = s.charAt(i);
-
-        // If its frequency is 1, return it immediately
-        if (frequencyMap.get(c) == 1) {
-            return c;
-        }
-    }
-
-    // If no non-repeating character was found, return '_'
-    return '_';
+public static String fizzBuzz(int n) {
+    if(n%3==0 && n%5==0) return "FizzBuzz";
+    else if(n%3==0) return "Fizz";
+    else if(n%5==0) return "Buzz";
+    else{ return Integer.toString(n); }
 }
+//time complexity 0(1)
+//space complexity 0(1)
 
 }
