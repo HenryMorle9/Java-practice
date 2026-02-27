@@ -156,4 +156,24 @@ for (int num : nums) {
  return -1;
 }
 
+/*
+Problem: Two Sum (Return Indices)
+
+Description:
+Given an integer array nums and an integer target, return the indices of the two numbers
+such that they add up to target.
+
+Rules:
+1) You must return the first pair found when scanning left to right (i from 0..n-1).
+2) If multiple answers exist, return the one where the second index is smallest (earliest found).
+3) If no such pair exists, return [-1, -1].
+4) Use a HashMap to achieve O(n) time.
+5) You may not use a nested loop brute force solution.
+
+Example:
+Input:  nums = [2, 7, 11, 15], target = 9
+Output: [0, 1]
+Reason: nums[0] + nums[1] = 2 + 7 = 9
+*/
+
 }
