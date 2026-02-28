@@ -59,6 +59,13 @@ def count_evens(nums):
 
 #simpler
 
+def count_evens(nums):
+    count = 0
+    for num in nums:
+        if(num%2==0):
+            count+=1
+    return count
+
 
 
 # 4️⃣ SECOND LARGEST NUMBER
@@ -70,7 +77,17 @@ def count_evens(nums):
 # Output: 10
 
 def second_largest(nums):
-    pass
+    largest= nums[0]
+    prevLargest= nums[0]
+    for i in range(len(nums)):
+        if nums[i] > largest:
+            prevLargest = largest
+            largest = nums[i]
+        elif nums[i] > prevLargest and nums[i] < largest:
+            prevLargest = nums[i]
+    return prevLargest
+        
+        
 
 
 
@@ -83,7 +100,12 @@ def second_largest(nums):
 # Output: [3, 2, 1]
 
 def reverse_array(nums):
-    pass
+    revList = []
+    reversePos = 1
+    for num in nums:
+        revList.insert(0, num)
+    return revList
+
 
 
 
@@ -96,7 +118,14 @@ def reverse_array(nums):
 # [1, 4, 2] → False
 
 def is_sorted(nums):
-    pass
+    prev = nums[0]
+    for num in nums:
+        if num < prev:
+            return False
+        prev = num
+    return True
+   
+            
 
 
 
@@ -122,7 +151,7 @@ def remove_duplicates(nums):
 # Output: [1, 3, 12, 0, 0]
 
 def move_zeros(nums):
-    pass
+    
 
 
 
