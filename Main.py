@@ -192,3 +192,35 @@ def two_sum(nums, target):
             return [seen[complement], index]
 
         seen[num] = index
+        
+
+# ==============================
+# HASHMAP + ENUMERATE PRACTICE
+# ==============================
+
+# 1️⃣ TWO DIFFERENCE
+# Given a list of integers and a target difference,
+# return the indices of two numbers such that:
+#
+# nums[j] - nums[i] == target
+#
+# You may assume exactly one solution exists.
+#
+# Example:
+# nums = [5, 20, 3, 2, 50, 80]
+# target = 78
+# Output: [3, 5]
+#
+# Explanation:
+# 80 - 2 = 78
+
+
+def two_difference(nums, target):
+    seen = {}
+    
+    for index, num in enumerate(nums):
+        complement = num - target
+        
+        if complement in seen:
+            return [seen[complement], index]
+        seen[num] = index
