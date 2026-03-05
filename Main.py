@@ -257,3 +257,16 @@ def lastColumnMatrix(arr):
 
     return total
             
+def evenAmountMatrix(arr):
+    
+    total = 0
+    
+    for row in arr:
+        for num in row:
+            if num%2==0:
+                total+=1
+    return total
+
+# Write a function that
+# counts how many numbers are greater than 5 in a matrix.
+
