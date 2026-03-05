@@ -267,6 +267,30 @@ def evenAmountMatrix(arr):
                 total+=1
     return total
 
-# Write a function that
+# Write a Ffunction that
 # counts how many numbers are greater than 5 in a matrix.
 
+def countGreaterthan5(arr):
+    
+    count = 0
+    
+    for i in range(len(arr)):
+        for j in range(len(arr[i])):
+            if j > 5:
+                count +=1
+    return count
+    
+def getRowCol(row, col, arr):
+    
+    for i in range(len(arr)):
+        if i==row:
+            for j in range(len(arr[i])):
+                if j == col:
+                    return arr[i][j]
+    return -1 #fail case
+# retardly bad time complexity....
+
+#actual way
+
+def getRowColumn(row, col, arr):
+    return arr[row, col]
