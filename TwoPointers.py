@@ -271,7 +271,7 @@ def keep_evens(nums):
 # Return the indices of the two numbers that add up to target.
 #
 # Assume:
-# - The array is sorted in non-decreasing order
+# - The array is sorted in ascending order
 # - Exactly one solution exists
 # - You must use constant extra space
 #
@@ -293,81 +293,20 @@ def keep_evens(nums):
 # - How to decide which pointer to move
 # ------------------------------------------------------------
 def two_sum_sorted(nums, target):
-    pass
+    right = len(nums)-1
+    left = 0
+    
+    while left < right:
+        if(nums[left]+nums[right])==target: return [left, right]
+        
+        elif(nums[left] + nums[right] > target): 
+            right-=1
+        else:
+            left+=1
 
 
-# ------------------------------------------------------------
-# 5) Valid Palindrome
-# ------------------------------------------------------------
-# Difficulty: Easy
-#
-# Problem:
-# Determine whether a string is a palindrome.
-#
-# Ignore:
-# - spaces
-# - punctuation
-# - case differences
-#
-# Example:
-# Input:  "A man, a plan, a canal: Panama"
-# Output: True
-#
-# Example:
-# Input:  "race a car"
-# Output: False
-#
-# Goal:
-# Practice two pointers with skipping logic.
-#
-# Pattern:
-# - Pointer at start
-# - Pointer at end
-# - Skip non-alphanumeric characters
-# - Compare lowercase versions of characters
-#
-# What to focus on:
-# - Pointer movement is no longer always symmetrical
-# - Sometimes one pointer moves while the other stays
-# ------------------------------------------------------------
-def is_palindrome(s):
-    pass
 
 
-# ------------------------------------------------------------
-# 6) Remove Duplicates from Sorted Array
-# ------------------------------------------------------------
-# Difficulty: Easy
-#
-# Problem:
-# Given a sorted array, remove duplicates in place so that
-# each unique element appears only once.
-#
-# Return the number of unique elements.
-#
-# Example:
-# Input:  [1, 1, 2]
-# Output: 2
-# Array becomes [1, 2, _]
-#
-# Example:
-# Input:  [0,0,1,1,1,2,2,3,3,4]
-# Output: 5
-# Array becomes [0,1,2,3,4,_,_,_,_,_]
-#
-# Goal:
-# Practice read/write style slow/fast pointers.
-#
-# Pattern:
-# - Fast pointer scans through the array
-# - Slow pointer writes the next unique value
-#
-# What to focus on:
-# - Difference between reading and writing positions
-# - Why the input being sorted matters
-# ------------------------------------------------------------
-def remove_duplicates(nums):
-    pass
 
 
 # ------------------------------------------------------------
